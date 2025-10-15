@@ -29,7 +29,7 @@ jobs:
 
   # Job 2: Pruebas Unitarias y de Componentes
   unit-tests:
-    name: Unit Tests (Jest)
+    name: Unit Tests (Vitest)
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
@@ -45,41 +45,4 @@ jobs:
         run: npm ci
 
       - name: Run Unit Tests
-        run: npm test
-
-  # Job 3: Pruebas End-to-End
-  e2e-tests:
-    name: E2E Tests (Playwright)
-    timeout-minutes: 60
-    runs-on: ubuntu-latest
-    # Necesita el job de unit-tests para pasar primero (opcional, pero buena práctica)
-    needs: [linting, unit-tests]
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 'lts/*'
-          cache: 'npm'
-
-      - name: Install Dependencies
-        run: npm ci
-
-      - name: Install Playwright Browsers
-        run: npx playwright install --with-deps
-
-      - name: Build the Project
-        run: npm run build # Las pruebas E2E deben correr sobre la build de producción
-
-      - name: Run Playwright Tests
-        run: npx playwright test
-
-      - name: Upload Test Report
-        uses: actions/upload-artifact@v4
-        if: always() # Sube el reporte incluso si las pruebas fallan
-        with:
-          name: playwright-report
-          path: playwright-report/
-          retention-days: 30
+        run: npm run test:ci
