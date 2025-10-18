@@ -1,0 +1,49 @@
+---
+// Importamos nuestros estilos globales. ¡Esto es crucial!
+// Astro se encargará de optimizarlos y aplicarlos.
+import '../styles/global.css';
+
+// Importamos los componentes globales que estarán en todas las páginas.
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import MouseFollower from '@/components/MouseFollower.astro';
+
+// Definimos las props que este layout puede recibir.
+// 'title' será el título de la pestaña del navegador.
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Portafolio Profesional de Luiger Santana"
+    />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="bg-background text-foreground">
+    <!-- El MouseFollower se renderiza aquí para que esté disponible globalmente -->
+    <MouseFollower />
+
+    <!-- El Header es fijo y estará en la parte superior de todas las páginas -->
+    <Header />
+
+    <!-- La etiqueta <slot /> es donde Astro inyectará el contenido
+         de la página que esté usando este layout (ej. index.astro) -->
+    <main>
+      <slot />
+    </main>
+
+    <!-- El Footer estará en la parte inferior de todas las páginas -->
+    <Footer />
+  </body>
+</html>

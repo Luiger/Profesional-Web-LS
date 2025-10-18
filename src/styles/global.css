@@ -112,6 +112,23 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+
+  /* 1. Definimos los fotogramas clave para 'fade-in-up'.
+     Tailwind v4 los convierte en @keyframes fade-in-up { ... } */
+  --animation-keyframes-fade-in-up: {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  };
+
+  /* 2. Definimos la utilidad de animación.
+     Esto creará la clase 'animate-fade-in-up' que podemos usar en nuestro HTML. */
+  --animation-fade-in-up: fade-in-up 0.8s ease-out forwards;
 }
 
 @layer base {

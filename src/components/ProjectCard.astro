@@ -1,0 +1,64 @@
+---
+// src/components/ProjectCard.astro
+import type { Project, ProjectCategory } from '@/lib/mockData';
+import { Card, CardHeader, CardContent } from '@/components/ui/card';
+
+interface Props {
+  project: Project;
+}
+
+const { project } = Astro.props;
+
+const categoryStyles: Record<ProjectCategory, string> = {
+  IA: 'bg-blue-500/80 text-white',
+  Móvil: 'bg-green-500/80 text-white',
+  Web: 'bg-purple-500/80 text-white',
+};
+---
+
+<!-- El div exterior aplica la clase 'group' para controlar todos los efectos de hover -->
+<div class="group h-full">
+  <Card
+    className="bg-gray-900/50 backdrop-blur-sm border-gray-700/50 group-hover:border-blue-500/50 h-full flex flex-col transition-all duration-300 transform-gpu group-hover:shadow-2xl group-hover:shadow-blue-500/20 group-hover:-translate-y-2"
+  >
+    <!-- Usamos CardHeader para la imagen, eliminando su padding por defecto -->
+    <CardHeader className="p-0 relative h-56">
+      <img
+        src={project.image}
+        alt={project.title}
+        class="w-full h-full object-cover rounded-t-lg transition-transform duration-700 group-hover:scale-105"
+      />
+      <div
+        class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"
+      >
+      </div>
+
+      <!-- La directiva class:list de Astro es ideal para combinar clases estáticas y dinámicas -->
+      <span
+        class:list={[
+          'absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-semibold',
+          categoryStyles[project.category] || categoryStyles['Web'],
+        ]}
+      >
+        {project.category}
+      </span>
+    </CardHeader>
+
+    <!-- Usamos CardContent para el texto, permitiendo que crezca para llenar el espacio -->
+    <CardContent className="p-6 flex-grow flex flex-col">
+      <h3
+        class="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors"
+      >
+        {project.title}
+      </h3>
+      <p class="text-gray-400 text-sm mb-4 line-clamp-2 flex-grow">
+        {project.description}
+      </p>
+      <div
+        class="text-right text-blue-400 text-xs opacity-0 group-hover:opacity-100 transition-opacity mt-auto"
+      >
+        Ver detalles &rarr;
+      </div>
+    </CardContent>
+  </Card>
+</div>

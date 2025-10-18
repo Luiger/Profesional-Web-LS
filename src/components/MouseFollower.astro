@@ -1,0 +1,29 @@
+---
+
+---
+
+<!-- Los estilos para el seguidor del ratón. 'is:global' significa que
+     estas clases estarán disponibles globalmente, pero encapsuladas para no colisionar. -->
+<style is:global>
+  .mouse-follower-gradient {
+    background: radial-gradient(
+      600px at var(--x) var(--y),
+      rgba(29, 78, 216, 0.15),
+      transparent 80%
+    );
+  }
+</style>
+
+<!-- El script que se ejecutará en el navegador del cliente. -->
+<script>
+  document.addEventListener('mousemove', (e) => {
+    document.body.style.setProperty('--x', e.clientX + 'px');
+    document.body.style.setProperty('--y', e.clientY + 'px');
+  });
+</script>
+
+<!-- Este div aplicará el efecto de gradiente que sigue al ratón -->
+<div
+  class="mouse-follower-gradient fixed inset-0 z-30 pointer-events-none transition-opacity"
+>
+</div>
