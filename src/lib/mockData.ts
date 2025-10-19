@@ -38,15 +38,11 @@ export const projects: Project[] = [
     category: 'IA',
     description:
       'Sistema avanzado de reconocimiento facial utilizando redes neuronales profundas',
-    image:
-      'https://images.unsplash.com/photo-1697577418970-95d99b5a55cf?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDN8MHwxfHNlYXJjaHwxfHxhcnRpZmljaWFsJTIwaW50ZWxsaWdlbmNlfGVufDB8fHx8MTc1ODMwODUwMHww&ixlib=rb-4.1.0&q=85',
+    image: '/Deep-Learning-Layers.png',
     fullDescription:
       'Un sistema completo de reconocimiento facial desarrollado con TensorFlow y OpenCV. Implementa algoritmos de deep learning para detección y reconocimiento de rostros en tiempo real, con una precisión del 98.5%. Incluye una interfaz web intuitiva y API REST para integración con otros sistemas.',
     technologies: ['Python', 'TensorFlow', 'OpenCV', 'Flask', 'JavaScript'],
-    images: [
-      'https://images.unsplash.com/photo-1697577418970-95d99b5a55cf?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDN8MHwxfHNlYXJjaHwxfHxhcnRpZmljaWFsJTIwaW50ZWxsaWdlbmNlfGVufDB8fHx8MTc1ODMwODUwMHww&ixlib=rb-4.1.0&q=85',
-      'https://images.unsplash.com/photo-1674027444485-cec3da58eef4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDN8MHwxfHNlYXJjaHwyfHxhcnRpZmljaWFsJTIwaW50ZWxsaWdlbmNlfGVufDB8fHx8MTc1ODMwODUwMHww&ixlib=rb-4.1.0&q=85',
-    ],
+    images: ['/Deep-Learning-Layers.png', '/Abstract-Neural-Brain.png'],
     githubUrl: 'https://github.com/luiger-santana/face-recognition-ai',
     liveUrl: 'https://face-recognition-demo.netlify.app',
   },
@@ -56,15 +52,11 @@ export const projects: Project[] = [
     category: 'IA',
     description:
       'Chatbot avanzado con capacidades de NLP para atención al cliente automatizada',
-    image:
-      'https://images.unsplash.com/photo-1674027444485-cec3da58eef4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDN8MHwxfHNlYXJjaHwyfHxhcnRpZmljaWFsJTIwaW50ZWxsaWdlbmNlfGVufDB8fHx8MTc1ODMwODUwMHww&ixlib=rb-4.1.0&q=85',
+    image: '/Chatbot-Binary-Bubble.png',
     fullDescription:
       'Chatbot inteligente desarrollado con modelos de NLP avanzados que puede mantener conversaciones naturales y resolver consultas complejas. Integra análisis de sentimientos y aprendizaje continuo para mejorar sus respuestas con cada interacción.',
     technologies: ['Python', 'NLTK', 'Transformers', 'FastAPI', 'React'],
-    images: [
-      'https://images.unsplash.com/photo-1674027444485-cec3da58eef4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDN8MHwxfHNlYXJjaHwyfHxhcnRpZmljaWFsJTIwaW50ZWxsaWdlbmNlfGVufDB8fHx8MTc1ODMwODUwMHww&ixlib=rb-4.1.0&q=85',
-      'https://images.unsplash.com/photo-1557562645-4eee56b29bc1?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODF8MHwxfHNlYXJjaHwzfHxtYWNoaW5lJTIwbGVhcm5pbmd8ZW58MHx8fHwxNzU4MzMxNjMyfDA&ixlib=rb-4.1.0&q=85',
-    ],
+    images: ['/Chatbot-Binary-Bubble.png', '/Abstract-Neural-Brain.png'],
     githubUrl: 'https://github.com/luiger-santana/intelligent-chatbot',
     liveUrl: 'https://chatbot-nlp-demo.vercel.app',
   },
@@ -74,15 +66,11 @@ export const projects: Project[] = [
     category: 'IA',
     description:
       'Modelo predictivo para análisis de tendencias de mercado usando algoritmos ML',
-    image:
-      'https://images.unsplash.com/photo-1557562645-4eee56b29bc1?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODF8MHwxfHNlYXJjaHwzfHxtYWNoaW5lJTIwbGVhcm5pbmd8ZW58MHx8fHwxNzU4MzMxNjMyfDA&ixlib=rb-4.1.0&q=85',
+    image: '/Abstract-Neural-Brain.png',
     fullDescription:
       'Sistema de predicción de precios que utiliza algoritmos de machine learning para analizar tendencias de mercado. Implementa múltiples modelos (Random Forest, LSTM, XGBoost) y selecciona automáticamente el mejor según los datos históricos.',
     technologies: ['Python', 'Scikit-learn', 'Pandas', 'NumPy', 'Streamlit'],
-    images: [
-      'https://images.unsplash.com/photo-1557562645-4eee56b29bc1?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODF8MHwxfHNlYXJjaHwzfHxtYWNoaW5lJTIwbGVhcm5pbmd8ZW58MHx8fHwxNzU4MzMxNjMyfDA&ixlib=rb-4.1.0&q=85',
-      'https://images.pexels.com/photos/249798/pexels-photo-249798.png',
-    ],
+    images: ['/Abstract-Neural-Brain.png', '/Deep-Learning-Layers.png'],
     githubUrl: 'https://github.com/luiger-santana/price-predictor-ml',
     liveUrl: 'https://price-predictor-ml.herokuapp.com',
   },
@@ -92,14 +80,13 @@ export const projects: Project[] = [
     category: 'Móvil',
     description:
       'Aplicación móvil multiplataforma para gestión eficiente de proyectos y tareas',
-    image:
-      'https://images.unsplash.com/photo-1607799279861-4dd421887fb3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Njl8MHwxfHNlYXJjaHwxfHxwcm9ncmFtbWluZ3xlbnwwfHx8fDE3NTgyMjc2Nzd8MA&ixlib=rb-4.1.0&q=85',
+    image: '/Mobile-Icon-Color-Variations.png',
     fullDescription:
       'Aplicación móvil desarrollada con React Native y Expo que permite gestionar proyectos y tareas de manera eficiente. Incluye sincronización en tiempo real, notificaciones push, modo offline y colaboración en equipo.',
     technologies: ['React Native', 'Expo', 'Firebase', 'Redux', 'TypeScript'],
     images: [
-      'https://images.unsplash.com/photo-1607799279861-4dd421887fb3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Njl8MHwxfHNlYXJjaHwxfHxwcm9ncmFtbWluZ3xlbnwwfHx8fDE3NTgyMjc2Nzd8MA&ixlib=rb-4.1.0&q=85',
-      'https://images.unsplash.com/photo-1542831371-29b0f74f9713?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Njl8MHwxfHNlYXJjaHwyfHxwcm9ncmFtbWluZ3xlbnwwfHx8fDE3NTgyMjc2Nzd8MA&ixlib=rb-4.1.0&q=85',
+      '/Mobile-Icon-Color-Variations.png',
+      '/Dark-Mode-Dashboard-Logo.png',
     ],
     githubUrl: 'https://github.com/luiger-santana/task-manager-mobile',
     playStoreUrl: 'https://play.google.com/store/apps/task-manager',
@@ -110,14 +97,13 @@ export const projects: Project[] = [
     category: 'Web',
     description:
       'Plataforma educativa completa con sistema de cursos y evaluaciones online',
-    image:
-      'https://images.unsplash.com/photo-1605379399642-870262d3d051?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Njl8MHwxfHNlYXJjaHwzfHxwcm9ncmFtbWluZ3xlbnwwfHx8fDE3NTgyMjc2Nzd8MA&ixlib=rb-4.1.0&q=85',
+    image: '/Dark-Mode-Dashboard-Logo.png',
     fullDescription:
       'Plataforma web completa de e-learning desarrollada con React y Node.js. Incluye sistema de autenticación, creación de cursos, evaluaciones interactivas, seguimiento de progreso y panel de administración avanzado.',
     technologies: ['React', 'Node.js', 'PostgreSQL', 'Express.js', 'Socket.io'],
     images: [
-      'https://images.unsplash.com/photo-1605379399642-870262d3d051?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Njl8MHwxfHNlYXJjaHwzfHxwcm9ncmFtbWluZ3xlbnwwfHx8fDE3NTgyMjc2Nzd8MA&ixlib=rb-4.1.0&q=85',
-      'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Njl8MHwxfHNlYXJjaHw0fHxwcm9ncmFtbWluZ3xlbnwwfHx8fDE3NTgyMjc2Nzd8MA&ixlib=rb-4.1.0&q=85',
+      '/Dark-Mode-Dashboard-Logo.png',
+      '/Mobile-Icon-Color-Variations.png',
     ],
     githubUrl: 'https://github.com/luiger-santana/elearning-platform',
     liveUrl: 'https://elearning-platform-demo.vercel.app',

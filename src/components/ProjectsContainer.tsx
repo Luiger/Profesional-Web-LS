@@ -1,22 +1,28 @@
 // src/components/ProjectsContainer.tsx
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import type { Project, Category } from '@/lib/mockData';
 import ProjectModal from './ProjectModal';
 import { Button } from '@/components/ui/button';
+import ProjectCard from './ProjectCard'; // <-- AHORA IMPORTAMOS EL COMPONENTE DE REACT
 
 interface ProjectsContainerProps {
   projects: Project[];
   categories: Category[];
-  children: React.ReactNode[];
 }
 
 export default function ProjectsContainer({
   projects,
   categories,
-  children,
 }: ProjectsContainerProps) {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+
+  const filteredProjects = useMemo(() => {
+    if (selectedCategory === 'all') {
+      return projects;
+    }
+    return projects.filter((project) => project.category === selectedCategory);
+  }, [selectedCategory, projects]);
 
   return (
     <>
@@ -36,27 +42,18 @@ export default function ProjectsContainer({
       </div>
 
       {/* Cuadrícula de Proyectos */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {projects.map((project, index) => {
-          const card = children[index];
-          const isVisible =
-            selectedCategory === 'all' || project.category === selectedCategory;
-
-          return (
-            // --- ¡AQUÍ ESTÁ LA SOLUCIÓN! ---
-            // 1. Cambiamos el 'div' por un 'button'.
-            // 2. Añadimos type="button" (buena práctica).
-            // 3. Reseteamos los estilos del botón para que actúe como un contenedor.
-            <button
-              type="button"
-              key={project.id}
-              className={`block w-full text-left p-0 ${!isVisible ? 'hidden' : ''}`}
-              onClick={() => setSelectedProject(project)}
-            >
-              {card}
-            </button>
-          );
-        })}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg-grid-cols-3 gap-8">
+        {/* LÓGICA SIMPLE Y DIRECTA: MAPEAMOS LOS DATOS FILTRADOS Y RENDERIZAMOS EL COMPONENTE REACT */}
+        {filteredProjects.map((project) => (
+          <button
+            type="button"
+            key={project.id}
+            className="text-left"
+            onClick={() => setSelectedProject(project)}
+          >
+            <ProjectCard project={project} />
+          </button>
+        ))}
       </div>
 
       {/* Modal del Proyecto */}

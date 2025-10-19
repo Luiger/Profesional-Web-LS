@@ -2,9 +2,9 @@ name: Astro CI
 
 on:
   push:
-    branches: [ main, develop ]
+    branches: [ main, dev ]
   pull_request:
-    branches: [ main, develop ]
+    branches: [ main, dev ]
 
 jobs:
   # Job 1: Verificación de Calidad de Código (Linting)
