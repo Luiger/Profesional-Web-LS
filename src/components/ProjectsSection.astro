@@ -1,7 +1,6 @@
 ---
 // src/components/ProjectsSection.astro
 import ProjectsContainer from '@/components/ProjectsContainer.tsx';
-import ProjectCard from '@/components/ProjectCard.astro';
 import { projects, projectCategories } from '@/lib/mockData';
 ---
 
@@ -19,22 +18,11 @@ import { projects, projectCategories } from '@/lib/mockData';
       </p>
     </div>
 
-    {
-      /* Pasamos los datos como props Y renderizamos las tarjetas DENTRO del Island */
-    }
+    {/* EL ISLAND AHORA ES AUTOCONTENIDO. YA NO PASAMOS 'CHILDREN' */}
     <ProjectsContainer
       projects={projects}
       categories={projectCategories}
       client:visible
-    >
-      {/* Astro renderiza todas las tarjetas en el servidor */}
-      {
-        projects.map((project, index) => (
-          <div data-project-index={index}>
-            <ProjectCard project={project} />
-          </div>
-        ))
-      }
-    </ProjectsContainer>
+    />
   </div>
 </section>
