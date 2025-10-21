@@ -1,9 +1,48 @@
 ---
-
+import { personalInfo } from '@/lib/mockData';
+import { FaGithub as Github, FaLinkedin as Linkedin } from 'react-icons/fa';
 ---
 
-<header
-  class="fixed top-0 left-0 right-0 z-50 p-4 text-center bg-black/50 backdrop-blur-sm"
->
-  <p>Header Component</p>
+<!-- 
+  Usamos nuestra clase .glass-morph para el efecto de vidrio.
+  'fixed top-0 left-0 right-0 z-50' asegura que se mantenga en la parte superior.
+-->
+<header class="fixed top-0 left-0 right-0 z-50 glass-morph">
+  <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+    <!-- Nombre y Título -->
+    <div>
+      <h1 class="text-xl md:text-2xl font-bold text-foreground">
+        {personalInfo.name}
+      </h1>
+      <p class="text-sm md:text-base font-medium text-primary">
+        {personalInfo.title}
+      </p>
+    </div>
+
+    <!-- Iconos de Redes Sociales -->
+    <div class="flex items-center space-x-4">
+      <a
+        href={personalInfo.githubUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="GitHub de Luiger Santana"
+      >
+        <Github
+          className="w-6 h-6 text-primary transition-all duration-300 hover:scale-110 hover:text-accent mx-1"
+          client:visible
+        />
+      </a>
+      <a
+        href={personalInfo.linkedinUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="LinkedIn de Luiger Santana"
+      >
+        <Linkedin
+          className="w-6 h-6 text-primary transition-all duration-300 hover:scale-110 hover:text-accent mx-1"
+          client:visible
+        />
+      </a>
+    </div>
+  </div>
 </header>

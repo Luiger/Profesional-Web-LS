@@ -1,7 +1,59 @@
 ---
-
+// src/components/Footer.astro
+import { personalInfo } from '@/lib/mockData';
+import { Button } from '@/components/ui/button'; // Importamos el componente Button
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
 ---
 
-<footer class="p-4 text-center border-t border-border">
-  <p>Footer Component</p>
+<footer class="bg-background border-t border-border/50">
+  <div class="container mx-auto px-6 py-8">
+    <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+      <!-- Bloque 1: Nombre y Título (A la izquierda en escritorio) -->
+      <div class="text-center md:text-left">
+        <a
+          href="#hero"
+          class="text-xl font-bold text-foreground hover:text-primary transition-colors"
+          >{personalInfo.name}</a
+        >
+        <p class="text-sm text-muted-foreground">{personalInfo.title}</p>
+      </div>
+
+      <!-- Bloque 2: Enlaces de Navegación (En el centro en escritorio) -->
+      <nav class="flex gap-2">
+        <Button
+          variant="ghost"
+          className="font-bold text-foreground hover:text-primary hover:bg-transparent transition-colors"
+        >
+          <a href="#projects">Proyectos</a>
+        </Button>
+        {/* Aquí añadiremos más botones para futuras secciones */}
+      </nav>
+
+      <!-- Bloque 3: Iconos Sociales (A la derecha en escritorio) -->
+      <div class="flex gap-2">
+        <a
+          href={personalInfo.githubUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`GitHub de ${personalInfo.name}`}
+        >
+          <FaGithub
+            className="w-5 h-5 text-primary transition-all duration-300 hover:scale-110 hover:text-accent mx-1"
+            client:visible
+          />
+        </a>
+        <a
+          href={personalInfo.linkedinUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`LinkedIn de ${personalInfo.name}`}
+        >
+          <FaLinkedin
+            className="w-5 h-5 text-primary transition-all duration-300 hover:scale-110 hover:text-accent mx-1"
+            client:visible
+          />
+        </a>
+      </div>
+    </div>
+  </div>
 </footer>
