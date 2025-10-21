@@ -1,0 +1,49 @@
+---
+// src/components/SkillDiamond.astro
+import type { Skill } from '@/lib/mockData';
+
+interface Props {
+  skill: Skill;
+}
+const { skill } = Astro.props;
+---
+
+<div class="group perspective-1000">
+  <div
+    class="relative preserve-3d transition-all duration-700 group-hover:rotate-y-180"
+  >
+    <!-- Cara Frontal -->
+    <div
+      class="diamond-shape bg-card/80 backdrop-blur-sm border border-border backface-hidden"
+    >
+      <div class="diamond-content">
+        <div
+          class="w-4 h-4 rounded-full mb-2 shadow-lg"
+          style={`background-color: ${skill.color}; box-shadow: 0 0 15px ${skill.color}60;`}
+        >
+        </div>
+        <h3 class="font-bold text-sm text-foreground">{skill.name}</h3>
+        <div class="w-full bg-black/20 rounded-full h-1.5 my-1">
+          <div
+            class="h-1.5 rounded-full transition-all duration-1000 ease-out"
+            style={`width: ${skill.level}%; background-color: ${skill.color}; box-shadow: 0 0 10px ${skill.color}80;`}
+          >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cara Trasera -->
+    <div
+      class="diamond-shape bg-primary/80 backdrop-blur-sm border border-primary/50 backface-hidden rotate-y-180 absolute inset-0"
+    >
+      <div class="diamond-content">
+        <h3 class="font-bold text-sm text-primary-foreground">{skill.name}</h3>
+        <div class="text-3xl font-bold text-primary-foreground mt-1">
+          {skill.level}%
+        </div>
+        <div class="text-xs text-primary-foreground/80">Competencia</div>
+      </div>
+    </div>
+  </div>
+</div>

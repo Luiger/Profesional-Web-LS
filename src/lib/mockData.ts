@@ -28,6 +28,8 @@ export const personalInfo = {
   description:
     'Desarrollador Full Stack especializado en inteligencia artificial y tecnologías modernas. Con más de 5 años de experiencia creando soluciones innovadoras que combinan machine learning, desarrollo web y aplicaciones móviles. Apasionado por transformar ideas complejas en productos digitales elegantes y funcionales.',
   email: 'luiger.santana@email.com',
+  githubUrl: 'https://github.com/luiger-santana',
+  linkedinUrl: 'https://linkedin.com/in/luiger-santana',
 };
 
 // Datos de Proyectos
@@ -116,4 +118,24 @@ export const projectCategories: Category[] = [
   { id: 'IA', name: 'Inteligencia Artificial', count: 3 },
   { id: 'Móvil', name: 'Desarrollo Móvil', count: 1 },
   { id: 'Web', name: 'Desarrollo Web', count: 1 },
+];
+
+export interface Skill {
+  name: string;
+  level: number;
+  color: string;
+}
+
+export const skills: Skill[] = [
+  { name: 'React', level: 95, color: '#61DAFB' },
+  { name: 'JavaScript', level: 92, color: '#F7DF1E' },
+  { name: 'Flutter', level: 88, color: '#02569B' },
+  { name: 'Google Play', level: 85, color: '#34A853' },
+  { name: 'Zapier', level: 82, color: '#FF4A00' },
+  { name: 'CI/CD', level: 90, color: '#326CE5' },
+  { name: 'N8N', level: 80, color: '#EA4B71' },
+  { name: 'PostgreSQL', level: 87, color: '#336791' },
+  { name: 'Express.js', level: 89, color: '#000000' },
+  { name: 'Node.js', level: 91, color: '#339933' },
+  { name: 'React Native', level: 88, color: '#61DAFB' },
 ];
