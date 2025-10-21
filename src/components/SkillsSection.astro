@@ -1,0 +1,31 @@
+---
+// src/components/SkillsSection.astro
+import { skills } from '@/lib/mockData';
+import SkillDiamond from '@/components/SkillDiamond.astro';
+---
+
+<section id="skills" class="py-20 relative">
+  <div class="container mx-auto px-6">
+    <!-- Encabezado de la Sección -->
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-bold text-foreground mb-6">
+        <span class="text-muted-foreground">Mis</span>
+        <span
+          class="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent"
+          >Habilidades</span
+        >
+      </h2>
+      <p class="text-xl text-muted-foreground max-w-3xl mx-auto">
+        Tecnologías y herramientas que domino para crear soluciones innovadoras
+        y escalables.
+      </p>
+    </div>
+
+    <!-- Cuadrícula de Habilidades -->
+    <div
+      class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-y-16 justify-items-center"
+    >
+      {skills.map((skill) => <SkillDiamond skill={skill} />)}
+    </div>
+  </div>
+</section>

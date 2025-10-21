@@ -30,7 +30,9 @@ const { title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body class="bg-background text-foreground">
+  <body
+    class="bg-background bg-gradient-to-br from-background to-blue-950/50 text-foreground"
+  >
     <!-- El MouseFollower se renderiza aquí para que esté disponible globalmente -->
     <MouseFollower />
 
