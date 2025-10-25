@@ -1,14 +1,16 @@
 ---
 // src/components/Footer.astro
 import { personalInfo } from '@/lib/mockData';
-import { Button } from '@/components/ui/button'; // Importamos el componente Button
-import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { Button } from '@/components/ui/button';
+// 1. Ya no necesitamos importar los íconos aquí.
+//    Importamos nuestro componente contenedor en su lugar.
+import SocialIcons from '@/components/SocialIcons.tsx';
 ---
 
 <footer class="bg-background border-t border-border/50">
   <div class="container mx-auto px-6 py-8">
     <div class="flex flex-col md:flex-row justify-between items-center gap-8">
-      <!-- Bloque 1: Nombre y Título (A la izquierda en escritorio) -->
+      <!-- Bloque 1: Nombre y Título -->
       <div class="text-center md:text-left">
         <a
           href="#hero"
@@ -18,7 +20,7 @@ import { FaGithub, FaLinkedin } from 'react-icons/fa';
         <p class="text-sm text-muted-foreground">{personalInfo.title}</p>
       </div>
 
-      <!-- Bloque 2: Enlaces de Navegación (En el centro en escritorio) -->
+      <!-- Bloque 2: Enlaces de Navegación -->
       <nav class="flex gap-2">
         <Button
           variant="ghost"
@@ -26,34 +28,16 @@ import { FaGithub, FaLinkedin } from 'react-icons/fa';
         >
           <a href="#projects">Proyectos</a>
         </Button>
-        {/* Aquí añadiremos más botones para futuras secciones */}
       </nav>
 
-      <!-- Bloque 3: Iconos Sociales (A la derecha en escritorio) -->
-      <div class="flex gap-2">
-        <a
-          href={personalInfo.githubUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label={`GitHub de ${personalInfo.name}`}
-        >
-          <FaGithub
-            className="w-5 h-5 text-primary transition-all duration-300 hover:scale-110 hover:text-accent mx-1"
-            client:visible
-          />
-        </a>
-        <a
-          href={personalInfo.linkedinUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label={`LinkedIn de ${personalInfo.name}`}
-        >
-          <FaLinkedin
-            className="w-5 h-5 text-primary transition-all duration-300 hover:scale-110 hover:text-accent mx-1"
-            client:visible
-          />
-        </a>
-      </div>
+      <!-- Bloque 3: Iconos Sociales (Ahora usando nuestro componente) -->
+      <SocialIcons
+        githubUrl={personalInfo.githubUrl}
+        linkedinUrl={personalInfo.linkedinUrl}
+        containerClassName="flex gap-2"
+        iconClassName="w-5 h-5 text-primary transition-all duration-300 hover:scale-110 hover:text-accent mx-1"
+        client:visible
+      />
     </div>
   </div>
 </footer>
