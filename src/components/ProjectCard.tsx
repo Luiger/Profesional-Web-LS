@@ -1,5 +1,3 @@
-// src/components/ProjectCard.tsx
-import React from 'react';
 import type { Project, ProjectCategory } from '@/lib/mockData';
 import { Card, CardHeader, CardContent } from '@/components/ui/card';
 
@@ -15,8 +13,8 @@ const categoryStyles: Record<ProjectCategory, string> = {
 
 export default function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <div className="group h-full perspective-1000">
-      <Card className="bg-gray-900/50 backdrop-blur-sm border-gray-700/50 h-full flex flex-col transition-all duration-500 transform-gpu group-hover:shadow-2xl group-hover:shadow-blue-500/20 group-hover:-translate-y-2 preserve-3d group-hover:rotate-y-5">
+    <div className="group h-full will-change-transform">
+      <Card className="bg-card/80 backdrop-blur-sm border border-border h-full flex flex-col transition-all duration-500 ease-in-out transform-gpu hover:scale-105 hover:-translate-y-3 hover:shadow-2xl hover:shadow-primary/30">
         {' '}
         <CardHeader className="p-0 relative h-56 overflow-hidden rounded-t-lg">
           <img
